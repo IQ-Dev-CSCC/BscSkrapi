@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blacklist_schemas",
+  "info": {
+    "singularName": "blacklist-schema",
+    "pluralName": "blacklist-schemas",
+    "displayName": "blacklistSchema "
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nom": {
+      "type": "string",
+      "required": true
+    },
+    "prenom": {
+      "type": "string",
+      "required": true
+    },
+    "date_naissance": {
+      "type": "date",
+      "required": true
+    },
+    "lieu_naissance": {
+      "type": "string",
+      "required": true
+    },
+    "numero_carte_idetite": {
+      "type": "biginteger",
+      "required": true,
+      "min": "18"
+    }
+  }
+}

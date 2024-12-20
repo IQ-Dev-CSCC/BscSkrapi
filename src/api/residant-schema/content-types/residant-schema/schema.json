@@ -1,0 +1,85 @@
+{
+  "kind": "collectionType",
+  "collectionName": "residant_schemas",
+  "info": {
+    "singularName": "residant-schema",
+    "pluralName": "residant-schemas",
+    "displayName": "residantSchema",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nom": {
+      "type": "string",
+      "unique": false,
+      "required": true
+    },
+    "prenom": {
+      "type": "string",
+      "required": true
+    },
+    "date_naissance": {
+      "type": "date",
+      "required": true
+    },
+    "lieu_naissance": {
+      "type": "string",
+      "required": true
+    },
+    "sexe": {
+      "type": "enumeration",
+      "enum": [
+        "Homme",
+        "Femme"
+      ],
+      "required": true
+    },
+    "numero_carte_idetite": {
+      "type": "biginteger",
+      "required": true,
+      "min": "18"
+    },
+    "permission_parentale": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "est_marie": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "numero_chambre": {
+      "type": "integer",
+      "required": true,
+      "default": 1,
+      "min": 1
+    },
+    "date_entree": {
+      "type": "datetime",
+      "required": true
+    },
+    "date_sortie": {
+      "type": "datetime",
+      "required": true
+    },
+    "type_reservation": {
+      "type": "enumeration",
+      "enum": [
+        "Gratuit",
+        "Non Gratuit",
+        "restauration"
+      ],
+      "required": true
+    },
+    "hauberge_schema": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::hauberge-schema.hauberge-schema",
+      "inversedBy": "residant_schemas"
+    }
+  }
+}

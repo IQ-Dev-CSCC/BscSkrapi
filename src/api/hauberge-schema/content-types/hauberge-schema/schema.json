@@ -1,0 +1,93 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hauberge_schemas",
+  "info": {
+    "singularName": "hauberge-schema",
+    "pluralName": "hauberge-schemas",
+    "displayName": "haubergeSchema"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "maison",
+        "camping"
+      ],
+      "required": true,
+      "default": "maison"
+    },
+    "capacite": {
+      "type": "integer",
+      "required": true,
+      "min": 1
+    },
+    "nom": {
+      "type": "string",
+      "required": true
+    },
+    "latitude": {
+      "type": "text",
+      "required": true
+    },
+    "longitude": {
+      "type": "text",
+      "required": true
+    },
+    "adresse": {
+      "type": "text",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "password": {
+      "type": "password",
+      "required": true
+    },
+    "telephone": {
+      "type": "biginteger",
+      "min": "6",
+      "required": true
+    },
+    "imageList": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    },
+    "nbr_personne_reserve": {
+      "type": "integer",
+      "required": true,
+      "default": 0,
+      "min": 0
+    },
+    "availabilite": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "offres": {
+      "type": "enumeration",
+      "enum": [
+        "restarant",
+        "hebergement",
+        "espace pour les activities"
+      ],
+      "required": true
+    },
+    "residant_schemas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::residant-schema.residant-schema",
+      "mappedBy": "hauberge_schema"
+    }
+  }
+}

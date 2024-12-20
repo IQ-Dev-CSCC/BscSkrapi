@@ -474,6 +474,7 @@ export interface ApiBlacklistSchemaBlacklistSchema
   extends Struct.CollectionTypeSchema {
   collectionName: 'blacklist_schemas';
   info: {
+    description: '';
     displayName: 'blacklistSchema ';
     pluralName: 'blacklist-schemas';
     singularName: 'blacklist-schema';
@@ -494,7 +495,7 @@ export interface ApiBlacklistSchemaBlacklistSchema
     > &
       Schema.Attribute.Private;
     nom: Schema.Attribute.String & Schema.Attribute.Required;
-    numero_carte_idetite: Schema.Attribute.BigInteger &
+    numero_carte_identite: Schema.Attribute.BigInteger &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMax<
         {

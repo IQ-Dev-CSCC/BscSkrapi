@@ -4,7 +4,8 @@
   "info": {
     "singularName": "blacklist-schema",
     "pluralName": "blacklist-schemas",
-    "displayName": "blacklistSchema "
+    "displayName": "blacklistSchema ",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -27,7 +28,7 @@
       "type": "string",
       "required": true
     },
-    "numero_carte_idetite": {
+    "numero_carte_identite": {
       "type": "biginteger",
       "required": true,
       "min": "18"
